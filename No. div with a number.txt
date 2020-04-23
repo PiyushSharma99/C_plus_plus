@@ -1,0 +1,45 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int n,k=0,rem,c=0,newn,div;
+    int a[15],count[100];
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    while(k<n)
+    {
+        newn=a[k];
+        c=0;
+        while(newn>0)
+        {
+            rem = newn%10;
+            if(rem !=0 && a[k]%rem == 0)
+            {
+                 c++;
+                    //printf("%d-------%d",c,rem);
+                   // printf("\n");
+            }
+            //count[k]=c;
+            newn = newn/10;
+             
+        }
+        count[k]=c;
+        k++;
+    }
+     for(int i=0;i<n;i++)
+    {
+        printf("%d",count[i]);
+        printf("\n");
+    }
+}
